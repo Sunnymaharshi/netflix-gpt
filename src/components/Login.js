@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { MOVIES_BG_IMAGE } from "../utils/constants";
 const Login = () => {
     const [signIn,setSignIn] = useState(true);
     const [error,setError] = useState({nameErr:null,emailErr:null,passwordErr:null,backendErr:null});
@@ -71,7 +72,7 @@ const Login = () => {
   return (
     <div >
         <Header/>
-        <img className="absolute" src="https://assets.nflxext.com/ffe/siteui/vlv3/655a9668-b002-4262-8afb-cf71e45d1956/5ff265b6-3037-44b2-b071-e81750b21783/IN-en-20240715-POP_SIGNUP_TWO_WEEKS-perspective_WEB_c6d6616f-4478-4ac2-bdac-f54b444771dd_large.jpg" alt="bg-image" />
+        <img className="absolute" src={MOVIES_BG_IMAGE} alt="bg-image" />
         <form className="absolute text-white w-3/12 bg-[rgba(0,0,0,0.7)] my-64 mx-auto right-0 left-0 p-16 rounded-lg">
             <h1 className="mb-8 font-bold text-4xl">{ signIn ? "Sign In" : "Sign up"}</h1>
             {!signIn && <input ref={name} className="bg-[rgba(0,0,0,0.3)] mb-5 p-3 w-full border border-gray-50 rounded-md" type="text" placeholder="Name"/>}

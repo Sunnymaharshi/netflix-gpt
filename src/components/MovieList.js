@@ -1,7 +1,6 @@
 import MovieCard from "./MovieCard"
 
 const MovieList = ({category,list}) => {
-    console.log(list);
     if(!list) return;
 
   return (
